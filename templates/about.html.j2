@@ -1,0 +1,37 @@
+{% extends 'base.html.j2' %}
+{% import 'macros.html.j2' as mak%}
+
+{% block head %}
+<title>ჩვენ შესახებ</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/arch.css') }}">
+{% endblock %}
+
+{% block body %}
+
+{{ mak.nav() }}
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-5 p-1">
+      <div class="card px-3 px-sm-4 py-3 mt-3" style="border-radius: 20px;">
+        <h1 class="text-center">ჩვენ შესახებ</h1>
+        <div class="body-text text-justify medium"><b>&emsp;ვინ ვართ ჩვენ? ჩვენ ვართ საზოგადოებრივი მოძრაობა "ახალგაზრდები ევროპისთვის" </b> - ჩვენი მიზანია, საქართველოს კონსტიტუციის შესაბამისად, შევინარჩუნოთ გეზი ევროკავშირისა და ჩრდილოატლანტიკური ალიანსისკენ. ჩვენ გვამოძრავებს კლასიკური ლიბერალური აზროვნება და ვიბრძვით, რომ საქართველო იყოს ქვეყანა სადაც ნებისმიერს შეეძლება მიისწრაფოს ბედნიერებისკენ.</div>
+        <div class="body-text text-justify medium">&emsp;ახალგაზრდული მოძრაობა „Youth For Europe“-ის მიზანია საქართველოს ახალგაზრდობის გაცნობიერება პოლიტიკურ ფილოსოფიასა და გეოპოლიტიკურ მოვლენებში, აქტუალური ინტერვიუების და მოკლე ვიდეობის მეშვეობით.</div>
+        <div class="body-text text-justify medium">&emsp;ეს ვიდეობი შეგიძლიათ იხილოთ ჩვენს სოციალურ გვერდებზე</div>
+    <div class="row">
+        <div class="col-4">
+            <a href="https://www.tiktok.com/@youthforeuropegeorgia" class="btn btn-primary w-100">TikTok</a>
+        </div>
+        <div class="col-4">
+            <a href="https://www.instagram.com/youthforeurope_georgia" class="btn btn-primary w-100">Instagram</a>
+        </div>
+        <div class="col-4">
+            <a href="https://youtube.com/@youthforeuropegeorgia?si=bNd6MtvkLCuxi-3K" class="btn btn-primary w-100">YouTube</a>
+        </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

@@ -99,13 +99,13 @@ def submitSt():
         msg.attach(MIMEText(body, 'plain'))
 
 
-        # Sending the email
+         #Sending the email
         try:
             server = smtplib.SMTP(smtp_server, smtp_port)
             server.starttls()  # Secure the connection
             server.login(smtp_username, smtp_password)
             server.sendmail(sender_email, receiver_email, msg.as_string())
-            print("Email sent successfully!")
+            print("Email sent successfully სტუმ!")
         except Exception as e:
             print(f"Error: {e}")
         finally:
@@ -156,7 +156,7 @@ def submitMs():
         smtp_port = 587  # For TLS
         smtp_username = "yfeg2024@hotmail.com"
         smtp_password = "Dacva100"
-        
+        msg.attach(MIMEText(body, 'plain'))
 
         # Sending the email
         try:
@@ -230,9 +230,11 @@ def statia(id):
 
 @app.route("/inter")
 def inter():
-    global idx
     return render_template('inter.html.j2', idx=idx)
 
+@app.route("/about")
+def about():
+    return render_template('about.html.j2')
 
 if __name__ == "__main__":
     app.run(debug=True)
