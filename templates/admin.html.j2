@@ -1,0 +1,53 @@
+{% extends 'base.html.j2' %}
+
+{% block head %}
+<title>admin page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+ <div class="row">
+ <div class="col-6">
+    <form action="/admin" method="POST">
+        <p>Password</p>
+        <input type="password" id="password" name="password" placeholder="Password">
+        <p>Title</p>
+        <input type="text" name="title" id="title" placeholder="Title">
+        <p>filename of header picture</p>
+        <input type="text" name="filename" id="filename" placeholder="filename">
+        <p>is youtube link?</p>
+        <input type="checkbox" name="checkbox" id="checkbox" placeholder="Check me">
+        <p>HTML text or video link</p>
+        <textarea class="body-text" id="body-text" name="body-text" placeholder="Body Text"></textarea>
+        <input type="submit" value ="Submit">
+    </form>
+    <p>ტექსტის ქვედა მარჯვენა კუთხეს თუ ჩამოწევ ზომა გაიზრდება</p>
+    <button onclick="setText()">REFRESH</button>
+    <a href="/">go back</a>
+ </div>
+ <div class="col-1"></div>
+ <div class="col-5">
+       <div class="card px-1 px-sm-4 py-3 mt-3" style="border-radius: 20px;">
+        <h1 class="text-center" id="title2"></h1>
+        <div class="body-text text-left main-text" id="body-text2"></div>
+      </div>
+    </div>
+ </div>
+  </div>
+</div>
+
+<script>
+    function setText() {
+        var inputValue = document.getElementById('title').value;
+        document.getElementById('title2').innerText = inputValue;
+        var inputValue = document.getElementById('body-text').value;
+        document.getElementById('body-text2').innerText = inputValue;
+    }
+</script>
+
+{% endblock %}
+
+
+    
+

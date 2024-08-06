@@ -1,0 +1,14 @@
+html, body{
+    font-family: 'Noto Sans Georgian', sans-serif;
+    color: rgb(57, 57, 57);
+}
+.nt {
+    font-family: 'Noto Sans Georgian', sans-serif;
+    color: rgb(57, 57, 57);
+}
+
+body
+{
+    height: auto;
+    background-color: #eeebdc;
+}

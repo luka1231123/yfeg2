@@ -1,0 +1,149 @@
+{% extends 'base.html.j2' %}
+{% import 'macros.html.j2' as mak%}
+
+{% block head %}
+<title>Youth For Europe</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<style>
+  .gradient-box {
+    padding: 0.5%;
+    border-radius: 15px;
+    display: inline-block;
+    width: calc(100%); /* Adjust width based on the button's width + margin */
+    height: calc(100% + 200px); /* Adjust height as needed */
+    height: calc(200px + {{ entries_length * 200 }}px);
+    background: linear-gradient(to bottom, #E6E9FF, #eeebdc);
+  }
+</style>
+<script>
+
+</script>
+{% endblock %}
+
+{% block body %}
+<!-- Image and text -->
+{{ mak.nav() }}
+
+<div class="container-fluid">
+<br>
+<div class="row">
+  
+  
+  <div class="col-lg-3">
+    <div class="contover" onclick="handleClick(event)" id="hoverButton">
+      <img src="https://i.ibb.co/Yb3zKBY/voting-1.jpg" alt="Elections" class="archevani">
+      <div class="overlay">ოქტომბრის არჩევნები</div>
+      <div class="overlay2">იხილე მეტი!</div>
+    </div>
+  </div> 
+
+
+
+
+  <div class="col-12 col-lg-6">
+    {{mak.phone()}}
+    <div class="row">
+      <div class="col-6 mt-3">
+        {%if isInterviewsPressed==true%}
+          <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/2'" >ახალი სტატიები</div>
+        {%endif%}
+        {%if isInterviewsPressed==false%}
+          <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/2'" style="border: 4px solid #6D7CFE;">ახალი სტატიები</div>
+        {%endif%}
+      </div>
+      <div class="col-6 mt-3">
+          {%if isInterviewsPressed==true%}
+            <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/1'" style="border: 4px solid #6D7CFE;">ინტერვიუები</div>
+          {%endif%}
+          {%if isInterviewsPressed==false%}
+            <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/1'">ინტერვიუები</div>
+          {%endif%}      
+        </div>
+    </div>
+    <br>
+  </div>
+    <div class="gradient-box">
+      <!--selector comp-->
+      {{mak.laptop()}}
+        <div class="row">
+          <div class="col-6 mt-3">
+            {%if isInterviewsPressed==true%}
+              <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/2'" >ახალი სტატიები</div>
+            {%endif%}
+            {%if isInterviewsPressed==false%}
+              <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/2'" style="border: 4px solid #6D7CFE;">ახალი სტატიები</div>
+            {%endif%}          
+        </div>
+          <div class="col-6 mt-3">
+            {%if isInterviewsPressed==true%}
+              <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/1'" style="border: 4px solid #6D7CFE;">ინტერვიუები</div>
+            {%endif%}
+            {%if isInterviewsPressed==false%}
+              <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/1'">ინტერვიუები</div>
+            {%endif%}
+            
+          </div>
+        </div>
+      </div>
+      <!--end-->
+      <div class="container-fluid">
+        {% for stat in stats%}
+        <hr>
+        {%if isInterviewsPressed==true%}
+        <div class="row" onclick="window.location.href='{{ stat.content }}'">
+        {%endif%}
+        {%if isInterviewsPressed==false%}
+        <div class="row" onclick="window.location.href='{{ 'statia/' + stat.id|string }}'">
+        {%endif%}
+          <div class="col-7 article-box">
+            {{ mak.phone() }} 
+            <p class="h5 nt m-0"> {{stat.title}}</p>
+            </div>
+            {{ mak.laptop()}}
+            <p class="h4 nt mx-3"> {{stat.title}}</p>
+            <p class="h5 nt mx-3"> {{stat.date_created.date()}}</p>
+            </div>
+          </div>
+          <div class="col-4 m-0">
+            <img class="img-fluid article-logo" src="{{ stat.filename }}">
+          </div>
+          </div>
+          <hr>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script>
+  let firstClick = true;
+
+  function handleClick(event) {
+    const button = document.getElementById('hoverButton');
+
+    // Check if the user is on a mobile device
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      if (firstClick) {
+        event.preventDefault();
+        button.classList.add('hover');
+        firstClick = false;
+        setTimeout(() => {
+          button.classList.remove('hover');
+        }, 3000); // Remove hover effect after 3 seconds
+      } else {
+        window.location.href = '/archevnebi';
+      }
+    } else {
+      // Computer behavior
+      window.location.href = '/archevnebi';
+    }
+  }
+  </script>
+
+{{mak.footer()}}
+
+{% endblock %}
