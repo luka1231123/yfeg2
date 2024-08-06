@@ -5,8 +5,8 @@ body, html {
 }
 
 .parallax {
-    height: 30vh;
-    background-image: url("https://i.ibb.co/KbpBgNB/voting-1-upscaled.png"); /* Replace with your image URL */
+    height: 50vh;
+    background-image: url("https://i.ibb.co/Yb3zKBY/voting-1.jpg"); /* Replace with your image URL */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
