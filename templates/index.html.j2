@@ -29,7 +29,7 @@
 <div class="row">
   
   
-  <div class="col-lg-3">
+  <div class="col-lg-4">
     <div class="contover" onclick="handleClick(event)" id="hoverButton">
       <img src="https://i.ibb.co/Yb3zKBY/voting-1.jpg" alt="Elections" class="archevani">
       <div class="overlay">ოქტომბრის არჩევნები</div>
@@ -40,7 +40,7 @@
 
 
 
-  <div class="col-12 col-lg-6">
+  <div class="col-12 col-lg-5">
     {{mak.phone()}}
     <div class="row">
       <div class="col-6 mt-3">
@@ -48,12 +48,12 @@
           <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/2'" >ახალი სტატიები</div>
         {%endif%}
         {%if isInterviewsPressed==false%}
-          <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/2'" style="border: 4px solid #6D7CFE;">ახალი სტატიები</div>
+          <div class="btn btn-primary rounded-box-two-active nt" onclick="window.location.href='/2'">ახალი სტატიები</div>
         {%endif%}
       </div>
       <div class="col-6 mt-3">
           {%if isInterviewsPressed==true%}
-            <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/1'" style="border: 4px solid #6D7CFE;">ინტერვიუები</div>
+            <div class="btn btn-primary rounded-box-two-active nt" onclick="window.location.href='/1'">ინტერვიუები</div>
           {%endif%}
           {%if isInterviewsPressed==false%}
             <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/1'">ინტერვიუები</div>
@@ -71,12 +71,12 @@
               <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/2'" >ახალი სტატიები</div>
             {%endif%}
             {%if isInterviewsPressed==false%}
-              <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/2'" style="border: 4px solid #6D7CFE;">ახალი სტატიები</div>
+              <div class="btn btn-primary rounded-box-two-active nt" onclick="window.location.href='/2'">ახალი სტატიები</div>
             {%endif%}          
         </div>
           <div class="col-6 mt-3">
             {%if isInterviewsPressed==true%}
-              <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/1'" style="border: 4px solid #6D7CFE;">ინტერვიუები</div>
+              <div class="btn btn-primary rounded-box-two-active nt" onclick="window.location.href='/1'">ინტერვიუები</div>
             {%endif%}
             {%if isInterviewsPressed==false%}
               <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/1'">ინტერვიუები</div>
