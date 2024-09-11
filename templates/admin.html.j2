@@ -25,6 +25,7 @@
     <p>ტექსტის ქვედა მარჯვენა კუთხეს თუ ჩამოწევ ზომა გაიზრდება</p>
     <button onclick="setText()">REFRESH</button>
     <a href="/">go back</a>
+    <br>
  </div>
  <div class="col-1"></div>
  <div class="col-5">
@@ -39,10 +40,11 @@
 
 <script>
     function setText() {
-        var inputValue = document.getElementById('title').value;
-        document.getElementById('title2').innerText = inputValue;
-        var inputValue = document.getElementById('body-text').value;
-        document.getElementById('body-text2').innerText = inputValue;
+        var titleValue = document.getElementById('title').value;
+        document.getElementById('title2').innerText = titleValue;
+        
+        var bodyTextValue = document.getElementById('body-text').value;
+        document.getElementById('body-text2').innerHTML = bodyTextValue;
     }
 </script>
 
