@@ -12,7 +12,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///stats.db'
 db=SQLAlchemy(app)
 
 idx=0
-isInterviewsPressed = True
+isInterviewsPressed = False
 
 class stat(db.Model):
     id = db.Column(db.Integer, primary_key=True)
